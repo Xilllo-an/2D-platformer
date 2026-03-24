@@ -3,11 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://c0hppn657ud5p" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_18ou8"]
 [ext_resource type="TileSet" uid="uid://sqe1aa7bc4a7" path="res://Sprites/Tiles/new_tile_set.tres" id="2_oetg6"]
 [ext_resource type="PackedScene" uid="uid://lncorxhh3iny" path="res://Scenes/player.tscn" id="3_oetg6"]
+[ext_resource type="PackedScene" uid="uid://dk0j1uy4j2vq1" path="res://Scenes/enemy.tscn" id="4_v780k"]
+[ext_resource type="PackedScene" uid="uid://b2t7nh4qvo506" path="res://Scenes/coin.tscn" id="5_vyv8t"]
+[ext_resource type="PackedScene" uid="uid://dugolihxxolnm" path="res://Scenes/end_flag.tscn" id="6_41nyv"]
 
 [node name="Main" type="Node2D" unique_id=1549566031]
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=1972204179]
-position = Vector2(353, -85)
+position = Vector2(410, -116)
 texture = ExtResource("1_18ou8")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=504316305]
@@ -16,3 +19,41 @@ tile_set = ExtResource("2_oetg6")
 
 [node name="Player" parent="." unique_id=1715148572 instance=ExtResource("3_oetg6")]
 position = Vector2(-16, 1)
+
+[node name="Coins" type="Node" parent="." unique_id=2005622671]
+
+[node name="Coin" parent="Coins" unique_id=192038022 instance=ExtResource("5_vyv8t")]
+visible = false
+position = Vector2(27, -8)
+
+[node name="Coin2" parent="Coins" unique_id=662997496 instance=ExtResource("5_vyv8t")]
+position = Vector2(128, -8)
+
+[node name="Coin3" parent="Coins" unique_id=115891084 instance=ExtResource("5_vyv8t")]
+position = Vector2(208, 9)
+
+[node name="Coin4" parent="Coins" unique_id=629009416 instance=ExtResource("5_vyv8t")]
+position = Vector2(327, 44)
+
+[node name="Coin5" parent="Coins" unique_id=200029728 instance=ExtResource("5_vyv8t")]
+position = Vector2(429, 24)
+
+[node name="Coin6" parent="Coins" unique_id=1653601571 instance=ExtResource("5_vyv8t")]
+position = Vector2(522, 9)
+
+[node name="Coin7" parent="Coins" unique_id=656766104 instance=ExtResource("5_vyv8t")]
+position = Vector2(657, -13)
+
+[node name="Enemies" type="Node" parent="." unique_id=18412914]
+
+[node name="Enemy" parent="Enemies" unique_id=592885257 instance=ExtResource("4_v780k")]
+
+[node name="Enemy2" parent="Enemies" unique_id=951966702 instance=ExtResource("4_v780k")]
+position = Vector2(105, 8)
+
+[node name="Enemy3" parent="Enemies" unique_id=1721898342 instance=ExtResource("4_v780k")]
+position = Vector2(161, 22)
+
+[node name="EndFlag" parent="." unique_id=2097173729 instance=ExtResource("6_41nyv")]
+position = Vector2(811, -9)
+scene_to_load = ExtResource("3_oetg6")
