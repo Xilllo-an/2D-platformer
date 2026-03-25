@@ -1,16 +1,47 @@
 [gd_scene format=4 uid="uid://crh2i74n6kq7d"]
 
+[ext_resource type="Script" uid="uid://ca0auobhjkrrm" path="res://background_parallax.gd" id="1_1gomy"]
 [ext_resource type="Texture2D" uid="uid://c0hppn657ud5p" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_18ou8"]
 [ext_resource type="TileSet" uid="uid://sqe1aa7bc4a7" path="res://Sprites/Tiles/new_tile_set.tres" id="2_oetg6"]
 [ext_resource type="PackedScene" uid="uid://lncorxhh3iny" path="res://Scenes/player.tscn" id="3_oetg6"]
 [ext_resource type="PackedScene" uid="uid://dk0j1uy4j2vq1" path="res://Scenes/enemy.tscn" id="4_v780k"]
 [ext_resource type="PackedScene" uid="uid://b2t7nh4qvo506" path="res://Scenes/coin.tscn" id="5_vyv8t"]
 [ext_resource type="PackedScene" uid="uid://dugolihxxolnm" path="res://Scenes/end_flag.tscn" id="6_41nyv"]
+[ext_resource type="PackedScene" uid="uid://dpcnvko4wdej6" path="res://Scenes/leve_2.tscn" id="8_5t2pc"]
 
 [node name="Main" type="Node2D" unique_id=1549566031]
 
-[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=1972204179]
-position = Vector2(410, -116)
+[node name="Background" type="Node2D" parent="." unique_id=418485964]
+script = ExtResource("1_1gomy")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Background" unique_id=1972204179]
+modulate = Color(0.59210247, 0.99886364, 0.78165406, 1)
+position = Vector2(256, -55.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_18ou8")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Background" unique_id=2088827372]
+modulate = Color(0.59210247, 0.99886364, 0.78165406, 1)
+position = Vector2(768, -55.5)
+scale = Vector2(0.5, 0.50097656)
+texture = ExtResource("1_18ou8")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="Background" unique_id=1484637942]
+modulate = Color(0.59210247, 0.99886364, 0.78165406, 1)
+position = Vector2(1280, -55.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_18ou8")
+
+[node name="BackgroundSprite4" type="Sprite2D" parent="Background" unique_id=953735546]
+modulate = Color(0.59210247, 0.99886364, 0.78165406, 1)
+position = Vector2(-255, -55.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_18ou8")
+
+[node name="BackgroundSprite5" type="Sprite2D" parent="Background" unique_id=461273698]
+modulate = Color(0.59210247, 0.99886364, 0.78165406, 1)
+position = Vector2(-767, -55.5)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_18ou8")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=504316305]
@@ -21,10 +52,6 @@ tile_set = ExtResource("2_oetg6")
 position = Vector2(-16, 1)
 
 [node name="Coins" type="Node" parent="." unique_id=2005622671]
-
-[node name="Coin" parent="Coins" unique_id=192038022 instance=ExtResource("5_vyv8t")]
-visible = false
-position = Vector2(27, -8)
 
 [node name="Coin2" parent="Coins" unique_id=662997496 instance=ExtResource("5_vyv8t")]
 position = Vector2(128, -8)
@@ -47,13 +74,14 @@ position = Vector2(657, -13)
 [node name="Enemies" type="Node" parent="." unique_id=18412914]
 
 [node name="Enemy" parent="Enemies" unique_id=592885257 instance=ExtResource("4_v780k")]
+position = Vector2(70, 10)
 
 [node name="Enemy2" parent="Enemies" unique_id=951966702 instance=ExtResource("4_v780k")]
-position = Vector2(105, 8)
+position = Vector2(240, 34)
 
 [node name="Enemy3" parent="Enemies" unique_id=1721898342 instance=ExtResource("4_v780k")]
-position = Vector2(161, 22)
+position = Vector2(172, 22)
 
 [node name="EndFlag" parent="." unique_id=2097173729 instance=ExtResource("6_41nyv")]
 position = Vector2(811, -9)
-scene_to_load = ExtResource("3_oetg6")
+scene_to_load = ExtResource("8_5t2pc")
